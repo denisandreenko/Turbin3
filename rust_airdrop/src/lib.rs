@@ -2,7 +2,7 @@ mod programs;
 
 #[cfg(test)]
 mod tests {
-    use crate::programs::Turbin3_prereq::{CompleteArgs, WbaPrereqProgram, UpdateArgs};
+    use crate::programs::Turbin3_prereq::{CompleteArgs, TurbinePrereqProgram, UpdateArgs};
     use bs58;
     use solana_client::rpc_client::RpcClient;
     use solana_program::{pubkey::Pubkey, system_instruction::transfer, system_program};
@@ -114,7 +114,7 @@ mod tests {
         // Let's define our accounts
         let signer = read_keypair_file("Turbin3-wallet.json").expect("Couldn't find wallet file");
 
-        let prereq = WbaPrereqProgram::derive_program_address(&[
+        let prereq = TurbinePrereqProgram::derive_program_address(&[
             b"prereq",
             signer.pubkey().to_bytes().as_ref(),
         ]);
@@ -130,7 +130,7 @@ mod tests {
             .expect("Failed to get recent blockhash");
 
         // Now we can invoke the "complete" function
-        let transaction = WbaPrereqProgram::complete(
+        let transaction = TurbinePrereqProgram::complete(
             &[&signer.pubkey(), &prereq, &system_program::id()],
             &args,
             Some(&signer.pubkey()),
