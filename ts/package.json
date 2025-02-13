@@ -4,18 +4,20 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "keygen": "ts-node ./keygen.ts",
-    "airdrop": "ts-node ./airdrop.ts",
-    "transfer": "ts-node ./transfer.ts",
-    "enroll": "ts-node ./enroll.ts",
-    "utils": "ts-node ./utils.ts"
+    "keygen": "ts-node ./prereq/keygen.ts",
+    "airdrop": "ts-node ./prereq/airdrop.ts",
+    "transfer": "ts-node ./prereq/transfer.ts",
+    "enroll": "ts-node ./prereq/enroll.ts",
+    "toBase58": "ts-node ./tools/wallet_to_base58.ts"
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.30.1",
     "@solana/spl-token": "^0.4.9",
     "@solana/web3.js": "^1.98.0",
     "@types/node": "^22.10.5",
+    "@types/prompt": "^1.1.9",
     "bs58": "^6.0.0",
+    "prompt": "^1.3.0",
     "typescript": "^5.7.2"
   },
   "devDependencies": {
