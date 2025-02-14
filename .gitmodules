@@ -1,3 +1,3 @@
-[submodule "sol-dao"]
-	path = sol-dao
-	url = https://github.com/denisandreenko/sol-dao
+[submodule "rewards-dao"]
+	path = rewards-dao
+	url = https://github.com/denisandreenko/rewards-dao
